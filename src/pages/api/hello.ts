@@ -1,9 +1,8 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
+import { GiphyFetch } from '@giphy/js-fetch-api'
+import 'isomorphic-fetch'
 
-type Data = {
-  name: string
-}
+const apiKey = process.env.NEXT_PUPLIC_GIPHY
 
-export default (req: NextApiRequest, res: NextApiResponse<Data>) => {
-  res.status(200).json({ name: 'John Doe' })
-}
+const giphyFetch = new GiphyFetch(apiKey)
+
+export const fetchGifs = (offset) => giphyFetch.trending({ offset, limit: 10 })
