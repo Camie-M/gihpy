@@ -1,15 +1,11 @@
-import GifsWrapper from '../components/GifsWrapper'
+import { SearchContextManager } from '@giphy/react-components'
 
-import { fetchGifs } from './api/hello'
+import GifsWrapper from '../containers/GifsWrapper'
 
-export const getServerSideProps = async () => {
-  const { data } = await fetchGifs(0)
-  return {
-    props: {
-      gifs: data
-    }
-  }
-}
-export default function Home({ gifs }) {
-  return gifs ? <GifsWrapper gifs={gifs} fetchGifs={fetchGifs} /> : null
+export default function Home() {
+  return (
+    <SearchContextManager apiKey={'vjh7O3J8zzk6ZUOfaMmAX9WVyZeTVc3U'}>
+      <GifsWrapper />
+    </SearchContextManager>
+  )
 }
