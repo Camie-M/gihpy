@@ -3,6 +3,7 @@ import React, { useContext } from 'react'
 import useResponsive from '../../hooks/useResponsive'
 
 import { SearchBar, SearchContext } from '@giphy/react-components'
+
 import GifsGrid from '../../components/GifsGrid'
 
 import * as S from './styled'

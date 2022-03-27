@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { spaces } from 'styles/global'
+
 export const ModalWrapper = styled.div`
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
@@ -14,9 +16,9 @@ export const ModalWrapper = styled.div`
 export const ModalInfo = styled.div`
   animation: crescendo 0.5s alternate forwards ease-in;
   background-color: white;
-  border-radius: 1rem;
+  border-radius: ${spaces.half};
   display: flex;
-  padding: 2rem;
+  padding: ${spaces.regular};
   position: relative;
   width: fit-content;
 
@@ -31,11 +33,11 @@ export const ModalInfo = styled.div`
 
   button {
     position: absolute;
-    top: 2rem;
-    right: 2rem;
+    top: ${spaces.regular};
+    right: ${spaces.regular};
   }
 `
 
 export const ModalName = styled.div`
-  margin: 4rem 2rem;
+  margin: ${spaces.double} ${spaces.regular};
 `

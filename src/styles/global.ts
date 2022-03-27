@@ -1,5 +1,16 @@
 import { createGlobalStyle } from 'styled-components'
 
+export const colors = {
+  black: '#000',
+  white: '#fff'
+}
+
+export const spaces = {
+  regular: '2rem',
+  half: '1rem',
+  double: '4rem'
+}
+
 const GlobalStyles = createGlobalStyle`
   * {
     margin: 0;
