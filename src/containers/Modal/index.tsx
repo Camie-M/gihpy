@@ -28,8 +28,13 @@ const Modal = () => {
           <Button active={false} click={closeModal}>
             <ImageWrapper width={32} height={32} src={CloseIcon} />
           </Button>
-          <Link href={currentGif.embed_url} title="Abrir gif em nova página" />
-          <Title title={currentGif.title} />
+          <S.ModalName>
+            <Title title={currentGif.title} />
+            <Link
+              href={currentGif.embed_url}
+              title="Abrir gif em nova página"
+            />
+          </S.ModalName>
         </S.ModalInfo>
       </S.ModalWrapper>
     )

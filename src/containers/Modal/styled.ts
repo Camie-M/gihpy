@@ -15,6 +15,7 @@ export const ModalInfo = styled.div`
   animation: crescendo 0.5s alternate forwards ease-in;
   background-color: white;
   border-radius: 1rem;
+  display: flex;
   padding: 2rem;
   position: relative;
   width: fit-content;
@@ -33,4 +34,8 @@ export const ModalInfo = styled.div`
     top: 2rem;
     right: 2rem;
   }
+`
+
+export const ModalName = styled.div`
+  margin: 4rem 2rem;
 `
