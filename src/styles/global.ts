@@ -2,7 +2,14 @@ import { createGlobalStyle } from 'styled-components'
 
 export const colors = {
   black: '#000',
-  white: '#fff'
+  white: '#fff',
+  red: '#c72c2c',
+  darkRed: '#8c1f1f',
+  grey: '#b3b3b3',
+  green: '#209e43',
+  darkGreen: '#16702f',
+  blue: '#4778cc',
+  darkBlue: '#0e316e'
 }
 
 export const spaces = {
