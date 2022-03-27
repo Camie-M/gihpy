@@ -5,6 +5,8 @@ import Button from '../../components/Button'
 import Link from '../../components/Link'
 import Title from '../../components/Title'
 
+const CloseIcon = '/icons/cross.png'
+
 import * as S from './styled'
 
 const Modal = () => {
@@ -23,7 +25,9 @@ const Modal = () => {
             height={currentGif.images.downsized.height}
             src={currentGif.images.downsized.url}
           />
-          <Button active={false} title={'fechar'} click={closeModal} />
+          <Button active={false} click={closeModal}>
+            <ImageWrapper width={32} height={32} src={CloseIcon} />
+          </Button>
           <Link href={currentGif.embed_url} title="Abrir gif em nova página" />
           <Title title={currentGif.title} />
         </S.ModalInfo>

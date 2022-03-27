@@ -8,7 +8,7 @@ export const ModalWrapper = styled.div`
   justify-content: center;
   position: fixed;
   width: 100vw;
-  z-index: 5;
+  z-index: 1;
 `
 
 export const ModalInfo = styled.div`
@@ -16,7 +16,9 @@ export const ModalInfo = styled.div`
   background-color: white;
   border-radius: 1rem;
   padding: 2rem;
+  position: relative;
   width: fit-content;
+
   @keyframes crescendo {
     0% {
       transform: scale(0.6);
@@ -24,5 +26,11 @@ export const ModalInfo = styled.div`
     100% {
       transform: scale(1);
     }
+  }
+
+  button {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
   }
 `
