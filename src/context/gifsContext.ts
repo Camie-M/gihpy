@@ -2,13 +2,17 @@
 import { createContext, useContext } from 'react'
 
 export type Gifs = {
-  currentGit: any
+  currentGif: any
   setCurrentGif: (value: any) => void
+  openModal: boolean
+  setOpenModal: (value: boolean) => void
 }
 
 export const GifsContext = createContext<Gifs>({
-  currentGit: {},
-  setCurrentGif: (gifs) => gifs
+  currentGif: {},
+  setCurrentGif: (gifs) => gifs,
+  openModal: false,
+  setOpenModal: (value) => value
 })
 
 export const useGifs = () => useContext(GifsContext)

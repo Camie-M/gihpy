@@ -2,6 +2,8 @@ import { Grid } from '@giphy/react-components'
 
 import { giphyFetch } from '../../pages/api/hello'
 
+import { useGifs } from '../../context/gifsContext'
+
 interface GifsWrapperProps {
   columns: number
   width: number
@@ -9,9 +11,12 @@ interface GifsWrapperProps {
 }
 
 const GifsGrid = ({ columns, width, fetchGifs }: GifsWrapperProps) => {
+  const { setOpenModal, setCurrentGif } = useGifs()
+
   const getGifById = async (id) => {
     const { data } = await giphyFetch.gif(id)
-    console.log(data)
+    setCurrentGif(data)
+    setOpenModal(true)
   }
 
   return (
