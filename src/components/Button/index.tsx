@@ -1,13 +1,13 @@
 interface ButtonProps {
   active: boolean
-  title: string
+  children: React.ReactNode
   click: () => void
 }
 
-const Button = ({ active = true, title, click }: ButtonProps) => {
+const Button = ({ active = true, children, click }: ButtonProps) => {
   return (
     <button className={active && 'true'} onClick={click}>
-      {title}
+      {children}
     </button>
   )
 }
