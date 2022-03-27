@@ -92,7 +92,7 @@ const Modal = () => {
             <Button
               type="edit"
               click={() =>
-                saveGif(currentGif.id, currentGif.title, currentGif.url)
+                editGif(currentGif.id, currentGif.title, currentGif.url)
               }
             >
               Editar
