@@ -1,14 +1,16 @@
+import * as S from './styled'
+
 interface ButtonProps {
-  active: boolean
+  type?: string
   children: React.ReactNode
   click: () => void
 }
 
-const Button = ({ active = true, children, click }: ButtonProps) => {
+const Button = ({ type, children, click }: ButtonProps) => {
   return (
-    <button className={active && 'true'} onClick={click}>
+    <S.Button className={type && `${type}`} onClick={click}>
       {children}
-    </button>
+    </S.Button>
   )
 }
 

@@ -1,11 +1,13 @@
 import { useGifs } from '../../context/gifsContext'
 
+import { DeleteGif, EditGif, SaveGif } from '../../pages/api/hello'
+
 import ImageWrapper from '../../components/Image'
 import Button from '../../components/Button'
 import Link from '../../components/Link'
 import Title from '../../components/Title'
 
-const CloseIcon = '/icons/cross.png'
+const CloseIcon = '/icons/close.png'
 
 import * as S from './styled'
 
@@ -14,6 +16,48 @@ const Modal = () => {
 
   const closeModal = () => {
     setOpenModal(false)
+  }
+
+  const deleteGif = (id: string) => {
+    DeleteGif.deleteGif(id)
+      .then((data) => {
+        console.log(data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+
+  const saveGif = (id: string, title: string, url: string) => {
+    const body = {
+      id,
+      title,
+      url
+    }
+
+    SaveGif.postGif(body)
+      .then((data) => {
+        console.log(data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+
+  const editGif = (id, title, url) => {
+    const body = {
+      id,
+      title,
+      url
+    }
+
+    EditGif.editGif(id, body)
+      .then((data) => {
+        console.log(data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
 
   return (
@@ -25,7 +69,7 @@ const Modal = () => {
             height={currentGif.images.downsized.height}
             src={currentGif.images.downsized.url}
           />
-          <Button active={false} click={closeModal}>
+          <Button click={closeModal} type="close">
             <ImageWrapper width={32} height={32} src={CloseIcon} />
           </Button>
           <S.ModalName>
@@ -34,6 +78,25 @@ const Modal = () => {
               href={currentGif.embed_url}
               title="Abrir gif em nova página"
             />
+            <Button type="delete" click={() => deleteGif(currentGif.id)}>
+              Deletar
+            </Button>
+            <Button
+              type="save"
+              click={() =>
+                saveGif(currentGif.id, currentGif.title, currentGif.url)
+              }
+            >
+              Salvar
+            </Button>
+            <Button
+              type="edit"
+              click={() =>
+                saveGif(currentGif.id, currentGif.title, currentGif.url)
+              }
+            >
+              Editar
+            </Button>
           </S.ModalName>
         </S.ModalInfo>
       </S.ModalWrapper>

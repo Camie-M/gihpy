@@ -30,12 +30,6 @@ export const ModalInfo = styled.div`
       transform: scale(1);
     }
   }
-
-  button {
-    position: absolute;
-    top: ${spaces.regular};
-    right: ${spaces.regular};
-  }
 `
 
 export const ModalName = styled.div`
