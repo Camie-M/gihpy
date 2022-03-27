@@ -7,10 +7,8 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Boilerplate</title>
-        <link rel="shortcut icon" href="/img/" />
-        <link rel="apple-touch-icon" href="/img/" />
-        <meta name="description" content="Next JS Boilerplate" />
+        <title>Giphy</title>
+        <meta name="description" content="Giphy search" />
       </Head>
       <GlobalStyles />
       <Component {...pageProps} />
