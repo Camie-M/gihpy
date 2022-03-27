@@ -2,6 +2,7 @@ import { useGifs } from '../../context/gifsContext'
 
 import ImageWrapper from '../../components/Image'
 import Button from '../../components/Button'
+import Link from '../../components/Link'
 
 const Modal = () => {
   const { currentGif, openModal, setOpenModal } = useGifs()
@@ -21,7 +22,7 @@ const Modal = () => {
           src={currentGif.images.downsized.url}
         />
         <Button active={false} title={'fechar'} click={closeModal} />
-        <a href={currentGif.embed_url}>Abrir gif em nova página</a>
+        <Link href={currentGif.embed_url} title="Abrir gif em nova página" />
         <p>{currentGif.title}</p>
       </div>
     )
