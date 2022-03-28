@@ -36,11 +36,8 @@ The app also contains mock functions to simulate what a contact with a API would
 2. Executing:
 
 ```sh
-  # API
   $ cd giphy
-  # Instalando as dependências do projeto.
   $ npm install # ou yarn
-  # Aplicação
   $ npm start # ou yarn dev
 ```
 
@@ -49,6 +46,7 @@ A couple of things can be done to make the project even better:
 - Research a better way for the giphy API to work with Typescript. Due to the lack of typing, explicts type "any" happened throughout the code
 - Implement unit testing
 -  Research on how to make the giphy api/NEXTJS work with environment variables (it did not work even using NEXT_PUBLIC), so the user api key would not be explicit.
+-  Further research to configure Docker in MacOS 
 
 ## :email: Contact
 
